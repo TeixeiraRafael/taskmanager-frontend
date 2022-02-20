@@ -1,0 +1,12 @@
+services:
+  frontend:
+    image: node:latest
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./app:/usr/src
+    environment:
+      CHOKIDAR_USEPOLLING: "true"
+    tty: true
+    working_dir: /usr/src
+    command: bash -c "npm install && npm start"
